@@ -5,10 +5,6 @@
 <meta name="theme-color" content="#222">
 
 
-  
-  
-  
-
 
 
   
@@ -1934,7 +1930,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #541b3e;
+  background: #ff93ff;
 }
 .feed-link,
 .chat {
@@ -2311,29 +2307,6 @@ a.gitment-editor-footer-tip,
   top: 50%;
   transform: translate(-50%, -50%);
   color: #ccc;
-}
-#needsharebutton-postbottom {
-  position: relative;
-  cursor: pointer;
-  height: 26px;
-}
-#needsharebutton-postbottom .btn {
-  display: initial;
-  padding: 1px 4px;
-  border: 1px solid #555;
-  border-radius: 3px;
-}
-#needsharebutton-float {
-  position: fixed;
-  bottom: 38px;
-  left: -8px;
-  z-index: 9999;
-  cursor: pointer;
-}
-#needsharebutton-float .btn {
-  padding: 0 10px 0 14px;
-  border: 1px solid #555;
-  border-radius: 4px;
 }
 .popular-posts-header {
   margin-top: 60px;
@@ -3908,12 +3881,6 @@ ul.breadcrumb li+li:last-child {
     
 
     
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    
 
     
 
@@ -4034,11 +4001,6 @@ ul.breadcrumb li+li:last-child {
   
 
   
-  
-  
-  
-  
-
 
   
 
@@ -4377,20 +4339,4 @@ ul.breadcrumb li+li:last-child {
         onPopupClose();
       }
     });
-  ;
-
-    
-    
-      flOptions = {};
-      
-        flOptions.iconStyle = "box";
-      
-        flOptions.boxForm = "horizontal";
-      
-        flOptions.position = "middleRight";
-      
-        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
-    
   </script></body></html>
