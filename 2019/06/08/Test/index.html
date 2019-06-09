@@ -1932,7 +1932,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffa;
+  background: #ffd62f;
 }
 .feed-link,
 .chat {
@@ -2184,13 +2184,25 @@ pre .javascript .function {
     transform: scale(1.1);
   }
 }
-.gt-header a,
-.gt-comments a,
-.gt-popup a {
+#gitment-display-button {
+  display: inline-block;
+  padding: 0 15px;
+  color: #0a9caf;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #0a9caf;
+  border-radius: 4px;
+}
+#gitment-display-button:hover {
+  color: #fff;
+  background: #0a9caf;
+}
+#gitment-container a {
   border-bottom: none;
 }
-.gt-container .gt-popup .gt-action.is--active:before {
-  top: 0.7em;
+a.gitment-editor-footer-tip,
+.gitment-container.gitment-footer-container {
+  display: none;
 }
 .local-search-pop-overlay {
   position: fixed;
@@ -3176,7 +3188,7 @@ ul.breadcrumb li+li:last-child {
   </style>
 </noscript>
 
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"></noscript></head>
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css"></noscript></head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -3541,6 +3553,19 @@ ul.breadcrumb li+li:last-child {
           
             
             
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/06/08/Test/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/08/Test/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -3659,7 +3684,11 @@ ul.breadcrumb li+li:last-child {
           
 
   
-    <div class="comments" id="gitalk-container">
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display: none"></div>
+      
     </div>
 
   
@@ -3992,17 +4021,13 @@ ul.breadcrumb li+li:last-child {
 
 
   
-    
+    <!-- LOCAL: You can save these files to your site and update links -->
 
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-
-
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitmint.browser.js"></script>
 
 
-
-
-<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<!-- END LOCAL -->
 
 
 
@@ -4052,19 +4077,32 @@ ul.breadcrumb li+li:last-child {
   }
 ;
 
-  var gitalk = new Gitalk({
-    clientID: '26c8828a6a538a12d173',
-    clientSecret: 'b6a97c16339fb6d38519f92b1a818cb694953f13',
-    repo: 'logicxcz.github.com',
-    owner: 'Logicxcz',
-    admin: ['Logicxcz'],
-    id: md5(location.pathname),
-    
-      language: 'zh-CN',
-    
-    distractionFreeMode: 'true'
-  });
-  gitalk.render('gitalk-container');
+  function renderGitment() {
+    var gitment = new Gitmint({
+      id: window.location.pathname,
+      owner: 'Logicxcz',
+      repo: 'logicxcz.github.com',
+      
+        lang: '' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+      
+      oauth: {
+      
+      
+        client_secret: '2dcd1aba4a0e49109c06ce56bbb51a6d671e436b',
+      
+        client_id: 'd07b1b3f738d8bd2452c'
+      }
+    });
+    gitment.render('gitment-container');
+  }
+
+  
+    function showGitment() {
+      document.getElementById('gitment-display-button').style.display = 'none';
+      document.getElementById('gitment-container').style.display = 'block';
+      renderGitment();
+    }
+  
 ;
 
     // Popup Window;
