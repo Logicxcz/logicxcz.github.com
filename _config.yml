@@ -5,7 +5,7 @@
 ##Less Is More
 
 # Site
-title: Less Is More
+title: 精气神儿 #Less Is More
 subtitle: 精益！至简！
 description:
 author: LogicX
@@ -71,8 +71,9 @@ pagination_dir: page
 #theme: cactus-dark
 #theme: landscape
 #theme: miho
-theme: hexo-theme-yilia
-#theme: next
+#theme: hexo-theme-yilia
+theme: next
+#theme: archer # https://www.androidperformance.com/ 看着也不错，但是是在 archer 基础上改过的。
 
 org:
   emacs: 'emacs'
@@ -83,10 +84,12 @@ org:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: git@github.com:Logicxcz/logicxcz.github.com.git
   #repo: https://github.com/Logicxcz/logicxcz.github.com.git
   branch: master
+  # other deployer
+- type: leancloud_counter_security_sync
 
 # Below is used by theme next
 symbols_count_time:
@@ -127,3 +130,10 @@ filter_optimize:
   # set the priority of this plugin,
   # lower means it will be executed first, default is 10
   priority: 12
+
+leancloud_counter_security:
+  enable_sync: true
+  app_id: FVOmOl0jfN8j0Vi8L95cOj6R-gzGzoHsz
+  app_key: n6y0MBKVHfMyI2Ja88UbxeYg
+  username: x.c.z
+  password: inYxYG8qVSkZn45eZx
