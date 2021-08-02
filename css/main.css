@@ -213,7 +213,7 @@ body {
 body {
   background: var(--body-bg-color);
   color: var(--text-color);
-  font-family: 'STYuanti-SC';
+  font-family: STYuanti-SC, consolas, Menlo, monospace, 'PingFang SC';
   font-size: 0.9em;
   line-height: 2;
   min-height: 100%;
@@ -3127,7 +3127,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: STYuanti-SC;
+  font-family: STYuanti-SC, consolas, Menlo, monospace, 'PingFang SC';
   font-weight: bold;
   line-height: 1.5;
   margin: 20px 0 15px;
