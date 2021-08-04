@@ -213,7 +213,7 @@ body {
 body {
   background: var(--body-bg-color);
   color: var(--text-color);
-  font-family: STYuanti-SC, consolas, Menlo, monospace, 'PingFang SC';
+  font-family: STYuanti-SC-Regular, consolas, Menlo, monospace, 'PingFang SC';
   font-size: 0.9em;
   line-height: 2;
   min-height: 100%;
@@ -226,7 +226,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: STYuanti-SC, STYuanti-SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: STYuanti-SC-Regular, STYuanti-SC-Regular, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 20px 0 15px;
@@ -482,7 +482,7 @@ pre {
 }
 pre,
 code {
-  font-family: STYuanti-SC, consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
+  font-family: STYuanti-SC-Regular, consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
 }
 code {
   border-radius: 3px;
@@ -1253,7 +1253,7 @@ pre code {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: STYuanti-SC, STYuanti-SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: STYuanti-SC-Regular, STYuanti-SC-Regular, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   margin: 0;
@@ -2029,7 +2029,7 @@ pre code {
   width: 4px;
 }
 .post-body {
-  font-family: STYuanti-SC, STYuanti-SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: STYuanti-SC-Regular, STYuanti-SC-Regular, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
@@ -2192,6 +2192,23 @@ pre code {
   margin: initial;
   overflow-wrap: break-word;
 }
+.posts-expand .post-title .post-edit-link {
+  border-bottom: 0;
+  color: #bbb;
+  display: inline-block;
+  float: right;
+  font-size: 1.25em;
+  margin-left: -1.2em;
+  transition: color 0.2s ease-in;
+}
+@media (max-width: 567px) {
+  .posts-expand .post-title .post-edit-link {
+    margin-left: initial;
+  }
+}
+.posts-expand .post-title .post-edit-link:hover {
+  color: #fc6423;
+}
 .posts-expand .post-title-link {
   border-bottom: 0;
   color: var(--link-color);
@@ -2223,7 +2240,7 @@ pre code {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: STYuanti-SC, STYuanti-SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: STYuanti-SC-Regular, STYuanti-SC-Regular, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }
